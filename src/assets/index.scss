@@ -1,6 +1,37 @@
 /**
   整体布局高度
  */
+*{
+    font-family: 'PingFangSC-Light', 'PingFang SC Light', 'PingFang SC';
+}
  .layout-content{
     height:calc(100vh);
   }
+  .ant-layout-header,.ant-layout,.ant-layout-sider{
+      background-color: inherit!important
+  }
+  .ant-layout-header{
+      margin: 0 30px;
+      padding: 0 20px;
+      border-bottom: 1px solid  #9ff;
+      .header-logo{
+        font-family: 'PingFangSC-Light', 'PingFang SC Light', 'PingFang SC';
+        font-weight: 200;
+        font-style: normal;
+        font-size: 26px;
+        color: #FFFFFF;
+      }
+      .header-login {
+        float: right;
+        color: white;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px
+      }
+  }
+ #app{
+    background: linear-gradient(180deg, rgba(95, 44, 181, 1) 0%, rgba(95, 44, 181, 1) 0%, rgba(1, 0, 68, 1) 100%, rgba(1, 0, 68, 1) 100%);
+    background:url('./images/background.jpg') no-repeat 100% 100%;
+    background-size:100% 100%;
+    background-position-y:bottom;        
+}

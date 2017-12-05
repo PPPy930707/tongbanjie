@@ -16,17 +16,29 @@ class HomePage extends React.Component {
     render() {
         const Home = () => (
             <div>
-                <h2>Home</h2>
+                <Layout >
+                    <Layout.Sider >
+                        <ul>
+                            <li><Link to="/InternetFinancialSupervision">现金贷</Link></li>
+                            <li><Link to="/P2P">P2P</Link></li>
+                            <li><Link to="/P2P">ICO</Link></li>
+                            <li><Link to="/P2P">其他</Link></li>
+                        </ul>
+                    </Layout.Sider>
+                    <Layout>
+                        <Layout.Content className="layout-content">
+                            123456
+                        </Layout.Content>
+                    </Layout>
+                </Layout>
             </div>
         )
 
-        const About = () => (
+        const P2P = () => (
             <div>
                 <P2PMainView />
             </div>
         )
-
-
 
         return (
             <Layout >
@@ -38,13 +50,8 @@ class HomePage extends React.Component {
                     <Layout.Content className="layout-content">
                         <Router>
                             <div>
-                                <ul>
-                                    <li><Link to="/InternetFinancialSupervision">Home</Link></li>
-                                    <li><Link to="/about">About</Link></li>
-                                </ul>
-
                                 <Route exact path="/InternetFinancialSupervision" component={Home} />
-                                <Route path="/about" component={About} />
+                                <Route path="/P2P" component={P2P} />
                             </div>
                         </Router>
                     </Layout.Content>
