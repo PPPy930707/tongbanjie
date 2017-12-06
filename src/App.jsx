@@ -16,11 +16,7 @@ class App extends React.Component {
     render(){
         return (
             <Router basename={envConfig.dev.rootPath}>
-                <div>
-                    <Route path="/" exact render={()=>{
-                        return <HomePage {...this.props} {...this.state}/>
-                    }}/>
-                </div>
+                <HomePage {...this.props} {...this.state}/>
             </Router>
         );
     }

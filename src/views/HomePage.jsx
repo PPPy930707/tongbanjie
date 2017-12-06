@@ -19,10 +19,10 @@ class HomePage extends React.Component {
                 <Layout >
                     <Layout.Sider >
                         <ul>
-                            <li><Link to="/P2P">P2P</Link></li>
-                            <li><Link to="/InternetFinancialSupervision">现金贷</Link></li>
-                            <li><Link to="/P2P">ICO</Link></li>
-                            <li><Link to="/P2P">其他</Link></li>
+                            <li><Link to="/p2p">P2P</Link></li>
+                            <li><Link to="/cash">现金贷</Link></li>
+                            <li><Link to="/ico">ICO</Link></li>
+                            <li><Link to="/other">其他</Link></li>
                         </ul>
                     </Layout.Sider>
                     <Layout>
@@ -34,12 +34,6 @@ class HomePage extends React.Component {
             </div>
         )
 
-        const P2P = () => (
-            <div>
-                <P2PMainView />
-            </div>
-        )
-
         return (
             <Layout >
                 <Layout.Header>
@@ -48,12 +42,12 @@ class HomePage extends React.Component {
                 </Layout.Header>
                 <Layout>
                     <Layout.Content className="layout-content">
-                        <Router>
-                            <div>
-                                <Route exact path="/InternetFinancialSupervision" component={Home} />
-                                <Route path="/P2P" component={P2P} />
-                            </div>
-                        </Router>
+                        <Route path='/' exact render={() => {
+                            return <Home />
+                        }} />   
+                        <Route path='/p2p' render={() => {
+                            return <P2PMainView />
+                        }} />   
                     </Layout.Content>
                 </Layout>
             </Layout>

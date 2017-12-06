@@ -5,9 +5,11 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 import { matchPath, withRouter } from 'react-router'
 import { Spin, Layout, Menu, Icon } from 'antd'
-// import LocationMonitor from '../page/location-monitor/LocationMonitor'
+
 import P2pOperation from './industry-situation/P2pOperation'
 import P2pContract from './contract-situation/P2pContract'
+import P2pLender from './borrower-situation/P2pBorrowe'
+import P2pBorrowe from './lender-situation/P2pLender'
 
 
 class P2PMainView extends React.Component {
@@ -25,10 +27,10 @@ class P2PMainView extends React.Component {
                     value: 'contract-situation'
                 }, {
                     text: 'P2P借款人情况',
-                    value: 'p2p-borrower'
+                    value: 'borrower-situation'
                 }, {
                     text: 'P2P出借人情况',
-                    value: 'p2p-lender'
+                    value: 'lender-situation'
                 }]
             }, {
                 text: '违规平台监测',
@@ -126,98 +128,21 @@ class P2PMainView extends React.Component {
     renderContent() {
         return (
             <div style={{ width: '100%', height: '100%', padding: '10px' }}>
-                <Route path='/' exact render={(props) => {
-                    return (<Redirect to={{
-                        pathname: '/p2p/industry-situation',
-                        state: { from: props.location }
-                    }} />)
-                }} />
+        
+                
                 <Route path='/p2p/industry-situation' render={() => {
                     return <P2pOperation />
                 }} />
                 <Route path='/p2p/contract-situation' render={() => {
                     return <P2pContract />
                 }} />
-                <Route path='/elec-regulation/history-manage' exact render={(props) => {
-                    return <div>
-                        <HistoryAlarm />
-                    </div>
+                <Route path='/p2p/lender-situation' render={() => {
+                    return <P2pLender />
                 }} />
-                <Route path='/elec-regulation/comprehensive-query' render={() => {
-                    return <ComprehensiveQuery />
+                <Route path='/p2p/borrower-situation' render={() => {
+                    return <P2pBorrowe />
                 }} />
-                <Route path='/elec-regulation/config-manage/collection-set' render={() => {
-                    return <CollectionSet />
-                }} />
-                <Route path='/elec-regulation/config-manage/type-set' render={() => {
-                    return <TypeSet />
-                }} />
-                <Route path='/elec-regulation/config-manage/except' exact render={(props) => {
-                    return <ClusterExcept />
-                }} />
-                <Route path='/elec-regulation/config-manage/device' render={() => {
-                    return <Device />
-                }} />
-                <Route path='/location-monitor' render={() => {
-                    return <LocationMonitor />
-                }} />
-                <Route path='/correct-manage/report' render={() => {
-                    return <Report />
-                }} />
-                <Route path='/correct-manage/archives/detain-people' render={() => {
-                    return <DetainPeople />
-                }} />
-                <Route path='/correct-manage/archives/connect-people' render={() => {
-                    return <ConnectPeople />
-                }} />
-                <Route path='/correct-manage/archives/detached-people' render={() => {
-                    return <DetachedPeople />
-                }} />
-                <Route path='/correct-manage/archives/transfer-people' render={() => {
-                    return <TransferedPeople />
-                }} />
-                <Route path='/correct-manage/archives/release-people' render={() => {
-                    return <ReleasePeople />
-                }} />
-                <Route path='/correct-manage/archives/leave-info' render={() => {
-                    return <LeaveInfo />
-                }} />
-                <Route path='/correct-manage/archives/warn-info' render={() => {
-                    return <WarnInfo />
-                }} />
-                <Route path='/correct-manage/archives/person-info' render={() => {
-                    return <PersonInfo />
-                }} />
-                <Route path='/correct-manage/sendMessage' render={() => {
-                    return <SendMessage />
-                }} />
-                <Route path='/correct-manage/learn' render={() => {
-                    return <LearnAdd />
-                }} />
-                <Route path='/correct-manage/labor' render={() => {
-                    return <LaborAdd />
-                }} />
-                <Route path='/correct-manage/seal/generating-files' render={() => {
-                    return <GenerateAdd />
-                }} />
-                <Route path='/correct-manage/seal/dossier-management' render={() => {
-                    return <ManageAdd />
-                }} />
-                <Route path='/waiting-correct' render={() => {
-                    return <div></div>
-                }} />
-                <Route path='/waiting-correct/correct-survey' render={() => {
-                    return <CorrectSurvey />
-                }} />
-                <Route path='/waiting-correct/prison' render={() => {
-                    return <Prison />
-                }} />
-                <Route path='/waiting-correct/court' render={() => {
-                    return <Court />
-                }} />
-                <Route path='/private-data' render={() => {
-                    return <PrivateData />
-                }} />
+
             </div>
         )
     }
