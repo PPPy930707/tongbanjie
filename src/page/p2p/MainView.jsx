@@ -6,137 +6,80 @@ import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom
 import { matchPath, withRouter } from 'react-router'
 import { Spin, Layout, Menu, Icon } from 'antd'
 // import LocationMonitor from '../page/location-monitor/LocationMonitor'
-// import ClusterExcept from '../page/config-manage/cluster-except/ClusterExcept'
-// import CollectionSet from '../page/config-manage/collection-set/CollectionSet'
-// import TypeSet from '../page/config-manage/type-set/TypeSet'
-// import Device from '../page/config-manage/device/Device'
-// import HistoryAlarm from '../page/history-alarm/HistoryAlarm'
-// import ComprehensiveQuery from '../page/comprehensive-query/ComprehensiveQuery'
-// import Report from '../page/correct-manage/report/Report'
-// import SendMessage from '../page/correct-manage/send-message/SendMessage'
-// import DetainPeople from '../page/correct-manage/archives/detain-people/DetainPeople'
-// import ConnectPeople from '../page/correct-manage/archives/connect-people/ConnectPeople'
-// import DetachedPeople from '../page/correct-manage/archives/detached-people/DetachedPeople'
-// import TransferedPeople from '../page/correct-manage/archives/transfered-people/TransferedPeople'
-// import ReleasePeople from '../page/correct-manage/archives/release-people/ReleasePeople'
-// import LeaveInfo from '../page/correct-manage/archives/leave-info/LeaveInfo'
-// import WarnInfo from '../page/correct-manage/archives/warn-info/warnInfo'
-// import PersonInfo from '../page/correct-manage/archives/PersonInfo'
-// import DataStatistics from '../page/data-statistics/DataStatistics'
-// import LearnAdd from '../page/correct-manage/collective-learn/Learnadd'
-// import ManageAdd from '../page/correct-manage/dossier-management/Manageadd'
-// import GenerateAdd from '../page/correct-manage/generating-files/Generateadd'
-// import LaborAdd from '../page/correct-manage/community-labor/Laboradd'
-// import CorrectSurvey from '../page/waiting-correct/CorrectSurvey/CorrectSurvey'
-// import Prison from '../page/waiting-correct/Prison/Prison'
-// import Court from '../page/waiting-correct/Court/Court'
-// import PrivateData from '../page/private/PrivateData'
+import P2pOperation from './industry-situation/P2pOperation'
+import P2pContract from './contract-situation/P2pContract'
+
 
 class P2PMainView extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             navs: [{
-                text: '数据统计',
-                value: 'data-statistics'
+                text: 'P2P行业态势',
+                value: 'p2p',
+                children: [{
+                    text: 'P2P运营情况',
+                    value: 'industry-situation'
+                }, {
+                    text: 'P2P合同情况',
+                    value: 'contract-situation'
+                }, {
+                    text: 'P2P借款人情况',
+                    value: 'p2p-borrower'
+                }, {
+                    text: 'P2P出借人情况',
+                    value: 'p2p-lender'
+                }]
             }, {
-                text: '电子监管',
+                text: '违规平台监测',
                 value: 'elec-regulation',
                 children: [{
-                    text: '历史报警信息管理',
+                    text: '未按要求备案',
                     value: 'history-manage'
                 }, {
-                    text: '综合查询',
+                    text: '资金未第三方托管',
                     value: 'comprehensive-query'
                 }, {
-                    text: '配置管理',
-                    value: 'config-manage',
-                    children: [{
-                        text: '信息采集设置',
-                        value: 'collection-set'
-                    }, {
-                        text: '报警类型设置',
-                        value: 'type-set'
-                    }, {
-                        text: '聚集报警排除',
-                        value: 'except'
-                    }, {
-                        text: '电子监管设备',
-                        value: 'device'
-                    }]
+                    text: '未第三方担保',
+                    value: 'collection-set'
+                }, {
+                    text: '单一融资项目募集期超期',
+                    value: 'type-set'
+                }, {
+                    text: '融资期限拆分',
+                    value: 'except'
+                }, {
+                    text: '虚假违规广告',
+                    value: 'device'
+
                 }]
             }, {
-                text: '定位监控',
+                text: '问题平台分析',
                 value: 'location-monitor'
             }, {
-                text: '矫正管理',
+                text: '风险分析',
                 value: 'correct-manage',
+            }, {
+                text: '查询中心',
+                value: 'call-center',
                 children: [{
-                    text: '在矫人员日常报到',
-                    value: 'report'
+                    text: 'P2P平台查询',
+                    value: 'terrace-search'
                 }, {
-                    text: '服刑人员档案管理',
-                    value: 'archives',
-
-                    children: [{
-                        text: '在矫人员',
-                        value: 'detain-people'
-                    }, {
-                        text: '衔接人员',
-                        value: 'connect-people'
-                    }, {
-                        text: '脱管人员',
-                        value: 'detached-people'
-                    }, {
-                        text: '已转出人员',
-                        value: 'transfer-people'
-                    }, {
-                        text: '解矫人员',
-                        value: 'release-people'
-                    }, {
-                        text: '请假信息',
-                        value: 'leave-info'
-                    }, {
-                        text:'警告信息',
-                        value:'warn-info'
-                    }
-                    ]
-
+                    text: 'P2P合同查询',
+                    value: 'pact-search'
                 }, {
-                    text: '信息发送',
-                    value: 'sendMessage'
+                    text: '借款人查询',
+                    value: 'borrower-search'
                 }, {
-                    text: '集体学习',
-                    value: 'learn'
-                }, {
-                    text: '社区劳动',
-                    value: 'labor'
-                }, {
-                    text: '电子签章',
-                    value: 'seal',
-                    children : [{
-                        text : '生成卷宗',
-                        value : 'generating-files'
-                    },{
-                        text : '卷宗管理',
-                        value : 'dossier-management'
-                    }]
+                    text: '出借人查询',
+                    value: 'lender-search'
+                },  {
+                    text: '一键查询',
+                    value: 'quick-search'
                 }]
             }, {
-                text: '待矫人员',
-                value: 'waiting-correct',
-                children: [{
-                    text: '社区矫正调查评估',
-                    value: 'correct-survey'
-                },{
-                    text: '监狱',
-                    value: 'prison'
-                }, {
-                    text: '法院',
-                    value: 'court'
-                }]
-            },{
-                text: '私密数据',
+                text: '统计报表',
                 value: 'private-data'
             }]
         }
@@ -185,12 +128,15 @@ class P2PMainView extends React.Component {
             <div style={{ width: '100%', height: '100%', padding: '10px' }}>
                 <Route path='/' exact render={(props) => {
                     return (<Redirect to={{
-                        pathname: '/data-statistics',
+                        pathname: '/p2p/industry-situation',
                         state: { from: props.location }
                     }} />)
                 }} />
-                <Route path='/data-statistics' render={() => {
-                    return <DataStatistics />
+                <Route path='/p2p/industry-situation' render={() => {
+                    return <P2pOperation />
+                }} />
+                <Route path='/p2p/contract-situation' render={() => {
+                    return <P2pContract />
                 }} />
                 <Route path='/elec-regulation/history-manage' exact render={(props) => {
                     return <div>
@@ -295,7 +241,8 @@ class P2PMainView extends React.Component {
                         </Menu>
                     </Layout.Sider>
                     <Layout.Content className="layout-content">
-                        1111111111111
+                        {/* 1111111111111 */}
+                        {this.renderContent()}
                     </Layout.Content>
                 </Layout>
             </Layout>

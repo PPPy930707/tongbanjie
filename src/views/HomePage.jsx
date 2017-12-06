@@ -19,8 +19,8 @@ class HomePage extends React.Component {
                 <Layout >
                     <Layout.Sider >
                         <ul>
-                            <li><Link to="/InternetFinancialSupervision">现金贷</Link></li>
                             <li><Link to="/P2P">P2P</Link></li>
+                            <li><Link to="/InternetFinancialSupervision">现金贷</Link></li>
                             <li><Link to="/P2P">ICO</Link></li>
                             <li><Link to="/P2P">其他</Link></li>
                         </ul>
@@ -43,7 +43,7 @@ class HomePage extends React.Component {
         return (
             <Layout >
                 <Layout.Header>
-                    <span className="header-logo">国家互联网金融检测平台</span>
+                    <span className="header-logo">中国互联网金融监管服务平台</span>
                     <span className="header-login">管理员：张三</span>
                 </Layout.Header>
                 <Layout>
