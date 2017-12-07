@@ -106,6 +106,7 @@ class HomePage extends React.Component {
                         </Layout.Content>
                     </Layout>
                 </Layout>
+                <div className='background-image'></div>
             </Layout>
         )
     }
