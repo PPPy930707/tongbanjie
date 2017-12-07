@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom
 import { matchPath, withRouter } from 'react-router'
 import { Spin, Layout, Menu, Icon } from 'antd'
 
-import Home from '../page/Home'
+import HomePageContent from './HomePageContent'
 import P2pOperation from '../page/p2p/industry-situation/P2pOperation'
 import P2pContract from '../page/p2p/contract-situation/P2pContract'
 import P2pBorrowe from '../page/p2p/borrower-situation/P2pBorrowe'
@@ -27,7 +27,7 @@ class HomePage extends React.Component {
         return (
             <div style={{ width: '100%', height: '100%', padding: '10px' }}>
                 <Route path='/' exact render={() => {
-                    return <Home />
+                    return <HomePageContent />
                 }} />
                 <Route path='/p2p/industry' render={() => {
                     return <P2pOperation />
