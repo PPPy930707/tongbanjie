@@ -22,6 +22,18 @@ class HomePage extends React.Component {
         this.props.history.push(link)
     }
 
+    mouseInIco = () => {
+        $('.menuContentIco').css('left', '80px');
+        $('.menuContentP2p').css('left', '-680px');
+    }
+    mouseInP2p = () => {
+        $('.menuContentP2p').css('left', '80px');
+        $('.menuContentIco').css('left', '-680px');
+    }
+    mouseBody = () => {
+        $('.menuContentIco').css('left', '-680px');
+        $('.menuContentP2p').css('left', '-680px');
+    }
     renderContent() {
         return (
             <div style={{ width: '100%', height: '100%', padding: '10px' }}>
@@ -56,7 +68,7 @@ class HomePage extends React.Component {
                 </Layout.Header>
                 <Layout>
                     <Layout.Sider >
-                        <Menu onClick={this.handleClick} mode="vertical">
+                        {/* <Menu onClick={this.handleClick} mode="vertical">
                             <SubMenu key="p2p" title={<span><span>P2P</span></span>}>
                                 <MenuItemGroup title="行业态势">
                                     <Menu.Item key="industry">运营情况</Menu.Item>
@@ -64,14 +76,13 @@ class HomePage extends React.Component {
                                     <Menu.Item key="borrower">借款人情况</Menu.Item>
                                     <Menu.Item key="lender">出借人情况</Menu.Item>
                                 </MenuItemGroup>
-                                <MenuItemGroup title="Iteom 2">
-                                    <Menu.Item key="3">Option 3</Menu.Item>
-                                    <Menu.Item key="4">Option 4</Menu.Item>
+                                <MenuItemGroup title="违规平台监测">
+                                    <Menu.Item key="3">未按要求备案</Menu.Item>
+                                    <Menu.Item key="4">资金未第三方托管</Menu.Item>
                                 </MenuItemGroup>
                             </SubMenu>
                             <SubMenu key="sub2" title={<span><span>ICO</span></span>}>
-                                <Menu.Item key="5">Option 5</Menu.Item>
-                                <Menu.Item key="6">Option 6</Menu.Item>
+                               <div>12312</div>
                             </SubMenu>
                             <SubMenu key="sub4" title={<span><span>现金贷</span></span>}>
                                 <Menu.Item key="9">Option 9</Menu.Item>
@@ -97,10 +108,137 @@ class HomePage extends React.Component {
                                 <Menu.Item key="11">Option 11</Menu.Item>
                                 <Menu.Item key="12">Option 12</Menu.Item>
                             </SubMenu>
-                        </Menu>
+                        </Menu> */}
+                        <div className='menu'>
+                            <ul>
+                                <li onMouseEnter={this.mouseInIco}><span className='menu-logo'><img src="../src/assets/images/icon_ico_off.svg" style={{ width: '50px' }} /></span><p>ICO</p></li>
+                                <li onMouseEnter={this.mouseInP2p}><span className='menu-logo'><img src="../src/assets/images/icon_p2p_off.svg" style={{ width: '50px' }} /></span><p>P2P</p></li>
+                                <li><span className='menu-logo'><img src="../src/assets/images/icon_cash_off.svg" style={{ width: '50px' }} /></span><p>现金贷</p></li>
+                                <li><span className='menu-logo'><img src="../src/assets/images/icon_stock_off.svg" style={{ width: '50px' }} /></span><p>股权众筹</p></li>
+                                <li><span className='menu-logo'><img src="../src/assets/images/icon_sham_off.svg" style={{ width: '50px' }} /></span><p>虚假违规</p></li>
+                                <li><span className='menu-logo'><img src="../src/assets/images/icon_deal_off.svg" style={{ width: '50px' }} /></span><p>非法外汇交易</p></li>
+                            </ul>
+                        </div>
+
+                        {/* ICO */}
+                        <div className='menuContent menuContentIco'>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>行业态势</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li>运营情况</li>
+                                        <li>合同情况</li>
+                                        <li>借款人情况</li>
+                                        <li>出借人情况</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>违规平台监测</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>查询中心</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>统计报表</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* P2P */}
+                        <div className='menuContent menuContentP2p'>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>行业态势</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li>运营情况</li>
+                                        <li>合同情况</li>
+                                        <li>借款人情况</li>
+                                        <li>出借人情况</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>违规平台监测</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>问题平台分析</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>风险分析</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>查询中心</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className='menuList-box'>
+                                <div className='menuContent-left'>统计报表</div>
+                                <div className='menuContent-right'>
+                                    <ul>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </Layout.Sider>
                     <Layout>
-                        <Layout.Content className="layout-content">
+                        <Layout.Content className="layout-content" onMouseEnter={this.mouseBody}>
                             {this.renderContent()}
                         </Layout.Content>
                     </Layout>
