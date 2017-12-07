@@ -65,14 +65,13 @@ class HomePage extends React.Component {
                                     <Menu.Item key="borrower">借款人情况</Menu.Item>
                                     <Menu.Item key="lender">出借人情况</Menu.Item>
                                 </MenuItemGroup>
-                                <MenuItemGroup title="Iteom 2">
-                                    <Menu.Item key="3">Option 3</Menu.Item>
-                                    <Menu.Item key="4">Option 4</Menu.Item>
+                                <MenuItemGroup title="违规平台监测">
+                                    <Menu.Item key="3">未按要求备案</Menu.Item>
+                                    <Menu.Item key="4">资金未第三方托管</Menu.Item>
                                 </MenuItemGroup>
                             </SubMenu>
                             <SubMenu key="sub2" title={<span><span>ICO</span></span>}>
-                                <Menu.Item key="5">Option 5</Menu.Item>
-                                <Menu.Item key="6">Option 6</Menu.Item>
+                               <div>12312</div>
                             </SubMenu>
                             <SubMenu key="sub4" title={<span><span>现金贷</span></span>}>
                                 <Menu.Item key="9">Option 9</Menu.Item>
