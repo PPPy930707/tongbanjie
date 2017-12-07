@@ -6,6 +6,17 @@ import ReactDOM from 'react-dom'
 import { Col, Row, Card } from 'antd'
 import Echart from '../components/Echart'
 
+const Point = (props) => {
+  return <a
+    style={{
+      display: 'inline-block',
+      border: '3px solid #000',
+      borderRadius: '5px',
+      borderColor:props.color,
+      marginRight:'5px'
+    }}></a>
+}
+
 class Distribute extends React.Component {
   constructor(props) {
     super(props)
@@ -38,7 +49,7 @@ class Distribute extends React.Component {
         formatter: '{a} <br/>{b}: {c} ({d}%)'
       },
       title: {
-        text: '各业态平台\n数量分布',
+        text: '各业态平台\n'+this.props.data.dataName,
         left: 'center',
         top: 'center',
         padding: [24, 0],
@@ -183,18 +194,24 @@ class Distribute extends React.Component {
         noHovering
         className='homepage-distribute'
       >
-        <p className='homepage-distribute-title'>用户数量分布 </p>
+        <p className='homepage-distribute-title'>{this.props.data.titleFirst} </p>
         <div className='homepage-distribute-pie'>
           <Echart option={pieOption} />
         </div>
+          <p style={{textAlign:'center',marginBottom:'5px'}}>
+          <span> <Point color='#409CE0'/>P2P</span>
+          <span> <Point color='#01FFFF'/>ICO</span>
+          <span> <Point color='#6699FF'/>股权众筹</span>
+          <span> <Point color='#F9BF00'/>现金贷</span>
+          </p>
         <div className='homepage-distribute-center'>
-          <p>用户总量</p>
+          <p>{this.props.data.titleSecond}</p>
           <p>
             <span>2341</span>
-            <span>(人)</span>
+            <span>({this.props.data.unit})</span>
           </p>
         </div>
-        <p className='homepage-distribute-title'>平台用户量排名</p>
+        <p className='homepage-distribute-title'>{this.props.data.titleThird}</p>
         <div className='homepage-distribute-bar'>
           <Echart option={barOption} />
         </div>

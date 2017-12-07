@@ -1,11 +1,20 @@
-/**
- * 首页
- */
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 // import { matchPath, withRouter } from 'react-router'
 import { Card } from 'antd'
 import Echart from '../components/Echart'
+
+const Point = (props) => {
+  return <a
+    style={{
+      display: 'inline-block',
+      border: '3px solid #000',
+      borderRadius: '5px',
+      borderColor:props.color,
+      marginRight:'5px'
+    }}></a>
+}
 
 class Count extends React.Component {
   constructor(props) {
@@ -38,7 +47,7 @@ class Count extends React.Component {
         formatter: '{a} <br/>{b}: {c} ({d}%)'
       },
       title: {
-        text: '各业态平台\n数量分布',
+        text: '各业态平台\n' + this.props.data.dataName,
         left: 'center',
         top: 'center',
         padding: [24, 0],
@@ -83,10 +92,18 @@ class Count extends React.Component {
         className='homepage-count'
       >
         <div style={{ float: 'left' }}>
-          <p className='homepage-count-title'>互金平台总数量</p>
+          <p className='homepage-count-title'>{this.props.data.title}</p>
           <p className='homepage-count-data'>
             <span>4856</span>
-            <span>(家)</span>
+            <span>({this.props.data.unit})</span>
+          </p>
+          <p>
+            <span style={{marginRight:'30px'}}> <Point color='#409CE0'/> P2P</span>
+            <span> <Point color='#01FFFF'/>ICO</span>
+          </p>
+          <p>
+            <span style={{marginRight:'8px'}}> <Point color='#6699FF'/>股权众筹</span>
+            <span> <Point color='#F9BF00'/>现金贷</span>
           </p>
         </div>
         <div className='homepage-count-pie'>

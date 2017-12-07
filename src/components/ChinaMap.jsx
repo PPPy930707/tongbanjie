@@ -11,39 +11,17 @@ class ChinaMap extends React.Component {
     }
     render() {
         const option = {
-            title: {
-                text: 'iphone销量',
-                subtext: '纯属虚构',
-                x: 'center'
-            },
             tooltip: {
                 trigger: 'item'
             },
-            legend: {
-                orient: 'vertical',
-                x: 'left',
-                data: ['iphone3', 'iphone4', 'iphone5']
-            },
-            dataRange: {
+            dataRange:this.props.dataRange? {
                 min: 0,
                 max: 2500,
                 x: 'left',
                 y: 'bottom',
                 text: ['高', '低'],           // 文本，默认为数值文本
                 calculable: true
-            },
-            toolbox: {
-                show: true,
-                orient: 'vertical',
-                x: 'right',
-                y: 'center',
-                feature: {
-                    mark: { show: true },
-                    dataView: { show: true, readOnly: false },
-                    restore: { show: true },
-                    saveAsImage: { show: true }
-                }
-            },
+            }:{},
             roamController: {
                 show: true,
                 x: 'right',
