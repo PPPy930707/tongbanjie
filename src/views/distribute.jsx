@@ -1,13 +1,12 @@
 /**
- * 首页
+ * 右侧平台分布组件
  */
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { matchPath, withRouter } from 'react-router'
-import { Card } from 'antd'
-import Echart from '../components/Echart'
+import { Col, Row } from 'antd'
+import Count from './Count'
 
-class Count extends React.Component {
+class Distribute extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -77,24 +76,10 @@ class Count extends React.Component {
       ]
     }
     return (
-      <Card
-        bordered={false}
-        noHovering
-        className='homepage-count'
-      >
-        <div style={{ float: 'left' }}>
-          <p className='homepage-count-title'>互金平台总数量</p>
-          <p className='homepage-count-data'>
-            <span>4856</span>
-            <span>(家)</span>
-          </p>
-        </div>
-        <div className='homepage-count-pie'>
-          <Echart option={option} />
-        </div>
-      </Card>
+      <div>
+        
+      </div>
     )
-
   }
 }
-export default Count
+export default Distribute

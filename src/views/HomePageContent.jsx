@@ -17,13 +17,14 @@ class HomePageContent extends React.Component {
       <div>
         <Row>
           <Col span={14}>
-          <Row>
-            <Col span={12}><Count /></Col>
-            <Col span={12}><Count /></Col>
-          </Row>
+            <Row>
+              <Col span={12}><Count /></Col>
+              <Col span={12}><Count /></Col>
+            </Row>
           </Col>
           <Col span={10}>
-            
+            <Col span={12}></Col>
+            <Col span={12}></Col>
           </Col>
         </Row>
 
