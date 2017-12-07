@@ -1,0 +1,27 @@
+.homepage-count{
+  max-width: 380px;
+  min-width: 350px;
+  height: 167px;
+  background-color: #411E86 !important;
+  position: absolutive;
+  margin-top: 20px;
+  border-top: 2px solid #6F84CA;
+  z-index: 100;
+  .homepage-count-title{
+    color:#F9BF00;
+  }
+  .homepage-count-data{
+    font-size: 40px;
+    >span:nth-child(2){
+      font-size: 12px;
+      margin-left: 5px;
+    }
+  }
+  .homepage-count-pie{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    float:right;
+    margin-top: -10px;
+  }
+}

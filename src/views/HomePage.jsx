@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom
 import { matchPath, withRouter } from 'react-router'
 import { Spin, Layout, Menu, Icon } from 'antd'
 import P2PMainView from '../page/p2p/MainView'
+import HomePageContent from './HomePageContent'
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class HomePage extends React.Component {
                     </Layout.Sider>
                     <Layout>
                         <Layout.Content className="layout-content">
-                            123456
+                            <HomePageContent />
                         </Layout.Content>
                     </Layout>
                 </Layout>
