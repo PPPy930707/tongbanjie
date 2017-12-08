@@ -62,10 +62,16 @@
   }
 }
 .homepage-map{
+  .ant-card-body{
+    padding:0px !important;
+  }
   height: 167px;
   background:rgba(0,0,0,0) !important;
   z-index: 100;
   p{
+    float: left;
+    margin-top:10px;
+    margin-left: 10px;
     color:#00FFFF;
     font-size: 14px;
   }
