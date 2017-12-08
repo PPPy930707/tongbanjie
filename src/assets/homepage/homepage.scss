@@ -1,5 +1,5 @@
 .homepage-count{
-  width:98%;
+  width:99%;
   height: 167px;
   background:linear-gradient(180deg, rgba(67, 31, 137, 1) 0%, rgba(51, 24, 118, 1) 100%) !important;
   margin-top: 15px;
@@ -25,7 +25,7 @@
 }
 .homepage-distribute{
   width:98%;
-  height:660px;
+  height:calc(100vh - 100px);
   margin-top: 15px;
   background:linear-gradient(180deg, rgba(67, 31, 137, 1) 0%, rgba(2, 1, 67, 1) 100%) !important; 
   border-top: 2px solid #6F84CA;
@@ -67,7 +67,6 @@
   }
   height: 167px;
   background:rgba(0,0,0,0) !important;
-  z-index: 100;
   p{
     float: left;
     margin-top:10px;
