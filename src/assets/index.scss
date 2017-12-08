@@ -133,10 +133,13 @@
     }
 }
 #app{
-    background: linear-gradient(180deg, rgba(95, 44, 181, 1) 0%, rgba(1, 0, 68, 1) 80%);
     background:url('./images/background.jpg') no-repeat 100% 100%;
+    background-color: linear-gradient(180deg, rgba(95, 44, 181, 1) 0%, rgba(1, 0, 68, 1) 80%);
     background-size:100% 100%;
 }
 .layout-content{
     color: #fff;
+}
+.ant-layout-content{
+    padding: 15px 20px;
 }

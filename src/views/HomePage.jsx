@@ -164,7 +164,7 @@ class HomePage extends React.Component {
                                 <div className='menuContent-left'>行业态势</div>
                                 <div className='menuContent-right'>
                                     <ul data='p2p'>
-                                        <li data='industry-situation'>运营情况1</li>
+                                        <li data='industry-situation'>运营情况</li>
                                         <li data='contract-situation'>合同情况</li>
                                         <li data='borrower-situation'>借款人情况</li>
                                         <li data='lender-situation'>出借人情况</li>
