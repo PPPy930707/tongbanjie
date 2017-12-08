@@ -13,6 +13,7 @@ import P2pBorrowe from '../page/p2p/borrower-situation/P2pBorrowe'
 import P2pLender from '../page/p2p/lender-situation/P2pLender'
 import P2pPlatform from '../page/p2p/platform-query/P2pPlatform'
 import P2pOnekey from '../page/p2p/onekey-query/P2pOnekey'
+import P2pMainView from '../page/p2p/P2pMainView'
 class HomePage extends React.Component {
     constructor(props) {
         super(props)
@@ -29,6 +30,13 @@ class HomePage extends React.Component {
             let secUrl = $(this).attr('data');
             let firstUrl = $(this).parent().attr('data');
             let link = '/'+firstUrl+'/'+secUrl;
+            thiz.props.history.push(link);
+            $('.menuContentIco').css('left', '-680px');
+            $('.menuContentP2p').css('left', '-680px');
+        })
+        $('.menu ul li').click(function(){
+            let url = $(this).attr('data');
+            let link = '/'+url;
             thiz.props.history.push(link);
             $('.menuContentIco').css('left', '-680px');
             $('.menuContentP2p').css('left', '-680px');
@@ -70,6 +78,9 @@ class HomePage extends React.Component {
                 <Route path='/p2p/onekey-query' render={() => {
                     return <P2pOnekey />
                 }} />
+                <Route path='/p2phome' render={() => {
+                    return <P2pMainView />
+                }} />
 
             </div>
         )
@@ -89,7 +100,7 @@ class HomePage extends React.Component {
                         <div className='menu'>
                             <ul>
                                 <li onMouseEnter={this.mouseInIco}><span className='menu-logo'><img src="../src/assets/images/icon_ico_off.svg" style={{ width: '50px' }} /></span><p>ICO</p></li>
-                                <li onMouseEnter={this.mouseInP2p}><span className='menu-logo'><img src="../src/assets/images/icon_p2p_off.svg" style={{ width: '50px' }} /></span><p>P2P</p></li>
+                                <li onMouseEnter={this.mouseInP2p} data='p2phome'><span className='menu-logo'><img src="../src/assets/images/icon_p2p_off.svg" style={{ width: '50px' }} /></span><p>P2P</p></li>
                                 <li><span className='menu-logo'><img src="../src/assets/images/icon_cash_off.svg" style={{ width: '50px' }} /></span><p>现金贷</p></li>
                                 <li><span className='menu-logo'><img src="../src/assets/images/icon_stock_off.svg" style={{ width: '50px' }} /></span><p>股权众筹</p></li>
                                 <li><span className='menu-logo'><img src="../src/assets/images/icon_sham_off.svg" style={{ width: '50px' }} /></span><p>虚假违规</p></li>
