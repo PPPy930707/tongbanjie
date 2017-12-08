@@ -11,6 +11,8 @@ import P2pOperation from '../page/p2p/industry-situation/P2pOperation'
 import P2pContract from '../page/p2p/contract-situation/P2pContract'
 import P2pBorrowe from '../page/p2p/borrower-situation/P2pBorrowe'
 import P2pLender from '../page/p2p/lender-situation/P2pLender'
+import P2pPlatform from '../page/p2p/platform-query/P2pPlatform'
+import P2pOnekey from '../page/p2p/onekey-query/P2pOnekey'
 class HomePage extends React.Component {
     constructor(props) {
         super(props)
@@ -50,17 +52,23 @@ class HomePage extends React.Component {
                 <Route path='/' exact render={() => {
                     return <Home />
                 }} />
-                <Route path='/p2p/industry' render={() => {
+                <Route path='/p2p/industry-situation' render={() => {
                     return <P2pOperation />
                 }} />
-                <Route path='/p2p/contract' render={() => {
+                <Route path='/p2p/contract-situation' render={() => {
                     return <P2pContract />
                 }} />
-                <Route path='/p2p/lender' render={() => {
+                <Route path='/p2p/lender-situation' render={() => {
                     return <P2pLender />
                 }} />
-                <Route path='/p2p/borrower' render={() => {
+                <Route path='/p2p/borrower-situation' render={() => {
                     return <P2pBorrowe />
+                }} />
+                <Route path='/p2p/platform-query' render={() => {
+                    return <P2pPlatform />
+                }} />
+                <Route path='/p2p/onekey-query' render={() => {
+                    return <P2pOnekey />
                 }} />
 
             </div>
@@ -145,10 +153,10 @@ class HomePage extends React.Component {
                                 <div className='menuContent-left'>行业态势</div>
                                 <div className='menuContent-right'>
                                     <ul data='p2p'>
-                                        <li data='industry'>运营情况1</li>
-                                        <li data='contract'>合同情况</li>
-                                        <li data='borrower'>借款人情况</li>
-                                        <li data='lender'>出借人情况</li>
+                                        <li data='industry-situation'>运营情况1</li>
+                                        <li data='contract-situation'>合同情况</li>
+                                        <li data='borrower-situation'>借款人情况</li>
+                                        <li data='lender-situation'>出借人情况</li>
                                     </ul>
                                 </div>
                             </div>
@@ -184,12 +192,12 @@ class HomePage extends React.Component {
                             <div className='menuList-box'>
                                 <div className='menuContent-left'>查询中心</div>
                                 <div className='menuContent-right'>
-                                    <ul>
+                                    <ul data='p2p'>
+                                        <li data='platform-query'>平台查询</li>
+                                        <li data='onekey-query'>一键查询</li>
+                                        {/* <li></li>
                                         <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
+                                        <li></li> */}
                                     </ul>
                                 </div>
                             </div>
@@ -197,7 +205,6 @@ class HomePage extends React.Component {
                                 <div className='menuContent-left'>统计报表</div>
                                 <div className='menuContent-right'>
                                     <ul>
-                                        <li></li>
                                         <li></li>
                                         <li></li>
                                         <li></li>
